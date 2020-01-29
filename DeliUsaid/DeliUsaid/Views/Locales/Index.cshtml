@@ -6,11 +6,11 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p style="width:50%;">
+    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
+<table class="table table-hover" style="background-color: #F8DDE2; color: #F62104;">
+    <tr class="bg-dark" style="color:#fff;">
         <th>
             @Html.DisplayNameFor(model => model.Usuarios.Usuario)
         </th>
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.Logo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdLocal }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdLocal }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdLocal })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdLocal }, new {@class = "btn btn-warning"}) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdLocal }, new {@class = "btn btn-success"}) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdLocal }, new {@class = "btn btn-danger"})
         </td>
     </tr>
 }
