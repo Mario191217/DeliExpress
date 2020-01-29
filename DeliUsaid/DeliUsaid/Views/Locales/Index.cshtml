@@ -50,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.Telefono)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Logo)
+            <img src="@item.Logo" width="100px" height="100px" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IdLocal }) |

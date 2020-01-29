@@ -48,10 +48,14 @@ namespace DeliUsaid.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdLocal,Nombre,Direccion,Correo,Telefono,Logo,IdUsuario")] Locales locales)
+        public ActionResult Create(Locales locales, HttpPostedFileBase Logo)
         {
             if (ModelState.IsValid)
             {
+                string archivo = locales.Nombre;
+                string url = "/Content/Img/" + archivo + DateTime.Now.ToString("dd-MM-yyyy") + (System.IO.Path.GetExtension(Logo.FileName));
+                Logo.SaveAs(Server.MapPath(url));
+                locales.Logo = url;
                 db.Locales.Add(locales);
                 db.SaveChanges();
                 return RedirectToAction("Index");
