@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DeliUsaid.Models.Platos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Locales.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePlato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Locales.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePlato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPlato }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPlato }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPlato })
+        </td>
+    </tr>
+}
+
+</table>
