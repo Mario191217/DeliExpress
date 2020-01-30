@@ -2,14 +2,16 @@
 
 @{
     ViewBag.Title = "Index";
+    var lista = Model.ToArray();
 }
+    <center>
+        <h2 style="color:#F62104;">Restaurantes</h2>
+    </center><br /><br />
 
-<h2>Index</h2>
-
-<p style="width:50%;">
-    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary" })
+<p>
+    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table table-hover" style="background-color: #F8DDE2; color: #F62104;">
+@*<table class="table table-hover" style="background-color: #F8DDE2; color: #F62104;">
     <tr class="bg-dark" style="color:#fff;">
         <th>
             @Html.DisplayNameFor(model => model.Usuarios.Usuario)
@@ -60,4 +62,18 @@
     </tr>
 }
 
-</table>
+</table>*@
+<div class="row">
+    @for (int i = 0; i < lista.Length; i += 1)
+    {
+        <div class="col-sm-6">
+            <div class="jumbotron" style="background-color: #F8DDE2;">
+                    <p style="font-size: 26px; color: #F62104;">@lista[i].Nombre <img src="@lista[i].Logo" style="width:100px; height:100px;" /></p>            
+                <br />             
+                @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdLocal }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdLocal }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdLocal }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    }
+</div>

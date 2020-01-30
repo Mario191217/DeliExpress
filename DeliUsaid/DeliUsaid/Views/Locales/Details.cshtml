@@ -4,63 +4,77 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<br />
+<div>
+    <div class="row">
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Locales</h4>
+
+                <hr />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Usuarios.Usuario)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Usuarios.Usuario)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Locales</h4>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Correo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Correo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Logo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Logo)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+</div>
 
 <div>
-    <h4>Locales</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuarios.Usuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Usuarios.Usuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Correo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Correo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Logo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Logo)
-        </dd>
-
-    </dl>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdLocal }, new { @class = "btn btn-warning"}) |
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdLocal }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
