@@ -4,79 +4,90 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
+<br />
 <div>
-    <h4>Personas</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Generos.Genero)
-        </dt>
+    <div class="row">
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Representante</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.Generos.Genero)
-        </dd>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Generos.Genero)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Generos.Genero)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DUI)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Apellido)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DUI)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DUI)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NIT)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DUI)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NIT)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NIT)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NIT)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Representante</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaNacimiento)
-        </dd>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaNacimiento)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPersona }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+    <div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.IdPersona }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+        </p>
+    </div>
