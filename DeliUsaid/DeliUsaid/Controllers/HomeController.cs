@@ -42,5 +42,10 @@ namespace DeliUsaid.Controllers
             db.Generos.Add(generos);
             db.SaveChanges();
         }
+
+        public ActionResult Principal()
+        {
+            return View();
+        }
     }
 }
