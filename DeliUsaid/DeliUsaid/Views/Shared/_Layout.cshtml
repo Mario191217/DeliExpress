@@ -4,40 +4,187 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Estilo.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <style>
+        ul li a {
+    color:#F62104;
+    text-decoration: none;
+    text-align: none;
+}
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Locales", "Index", "Locales", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Personas", "Index", "Personas", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Platos", "Index", "Platos", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Usuarios", "Index", "Usuarios", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="LogoSM">
+                <div class="img">
+                    <img src="~/Content/img/De.png">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <ul class="menu">
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+            <li @*class="activado"*@>
+                <a href = @Url.Action("Index","Locales")>
+                    <i class="icon d fas fa-store"></i>  Restaurantes@*<i class="icon i fas fa-chevron-down">*@</i>
+                </a>
+                @*<ul>
+                    <li>
+                        <a href="#">Producto 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Producto2</a>
+                    </li>
+                    <li>
+                        <a href="#">Producto3</a>
+                    </li>
+                </ul>*@
+            </li>
+
+            <li @*class="activado"*@>
+                <a href =@Url.Action("Index","Platos")>
+                    <i class="icon d fas fa-utensils"></i>  Menu@*<i class="icon i fas fa-chevron-down"></i>*@
+                </a>
+                @*<ul>
+                    <li>
+                        <a href="#">Compras</a>
+                    </li>
+                    <li>
+                        <a href="#">Compras</a>
+                    </li>
+                    <li>
+                        <a href="#">Compras</a>
+                    </li>
+                </ul>*@
+            </li>
+
+            <li @*class="activado"*@>
+                <a  href = @Url.Action("Index","Personas")>
+                    <i class="icon d fas fa-chalkboard-teacher"></i>   Representantes@*<i class="icon i fas fa-chevron-down"></i>*@
+                </a>
+                @*<ul>
+                    <li>
+                        <a href="#">Ventas</a>
+                    </li>
+                    <li>
+                        <a href="#">Ventas</a>
+                    </li>
+                    <li>
+                        <a href="#">Ventas</a>
+                    </li>
+                </ul>*@
+            </li>
+
+            <li @*class="activado"*@>
+                <a  href = @Url.Action("Index","Usuarios")>
+                    <i class="icon d fas fa-users"></i>  Usuarios@*<i class="icon i fas fa-chevron-down"></i>*@
+                </a>
+                @*<ul>
+                    <li>
+                        <a href="#">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="#">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="#">Proyectos</a>
+                    </li>
+                </ul>*@
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-danger">
+                    <i class="fa fa-bars"></i>
+
+
+                </button>
+                <button class="btn btn-danger d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="menu nav navbar-nav ml-auto">
+                        <li class=" nav-item">
+                            <button type="button" class="btn btn-warning btn-sm"><i class="icon fas fa-bell"></i></button>
+
+                        <li class=" nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon fas fa-users"></i>Usuario
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Gestion Usuario</a>
+                                <a class="dropdown-item" href="#">Gestion Roles</a>
+                                <a class="dropdown-item" href="#">Salir</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - DeliExpress</p>
+            </footer>
+        </div>
+
+
+        <script src="~/Scripts/popper.min.js"></script>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/main.js"></script>
+
+        @RenderSection("datepicker", false);
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#sidebarCollapse').on ('click', function () {
+                    $('#sidebar').classList.toggle('active');
+                });
+
+                //$('.menu li:has(ul)').on('click', function () {
+
+                //    if ($(this).hasClass('activado')) {
+                //        $(this).removeClass('activado');
+                //        $(this).children('ul').slideUp();
+
+                //    } else {
+                //        $('.menu li ul').slideUp();
+                //        $('.menu li').removeClass('activado');
+                //        $(this).addClass('activado');
+                //        $(this).children('ul').slideDown();
+
+                //    }
+                //});
+            });
+        </script>
+    </div>
+</div>
 </body>
+
 </html>
+
+@*@Html.ActionLink("Locales", "Index", "Locales", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Personas", "Index", "Personas", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Platos", "Index", "Platos", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Usuarios", "Index", "Usuarios", new { area = "" }, new { @class = "navbar-brand" })*@

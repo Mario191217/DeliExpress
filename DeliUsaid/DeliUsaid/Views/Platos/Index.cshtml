@@ -2,14 +2,18 @@
 
 @{
     ViewBag.Title = "Index";
+    var lista = Model.ToArray();
 }
 
-<h2>Index</h2>
-
+<center>
+    <h2 style="color:#F62104;">Menu de Restaurante</h2>
+</center>
+<br />
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Platillo", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Locales.Nombre)
@@ -35,35 +39,50 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Locales.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombrePlato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto3)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdPlato }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdPlato }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdPlato })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locales.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePlato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto3)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdPlato }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdPlato }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdPlato })
+            </td>
+        </tr>
+    }
 
-</table>
+</table>*@
+<div class="row">
+    @for (int i = 0; i < lista.Length; i += 1)
+    {
+        <div class="col-sm-6">
+            <div class="jumbotron" style="background-color: #F8DDE2;">
+                <p style="font-size: 26px; color: #F62104;">@lista[i].NombrePlato<img src="@lista[i].Foto1" style="width:100px; height:100px;" /></p>
+                <br />
+                @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdPlato }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdPlato }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdPlato }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    }
+</div>

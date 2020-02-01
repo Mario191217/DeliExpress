@@ -4,71 +4,82 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
+<br />
 <div>
-    <h4>Platos</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Locales.Nombre)
-        </dt>
+    <div class="row">
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Platillo</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.Locales.Nombre)
-        </dd>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Locales.Nombre)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NombrePlato)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Locales.Nombre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombrePlato)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NombrePlato)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NombrePlato)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto1)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+            </dl>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto1)
-        </dd>
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Platillo</h4>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Foto1)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto2)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Foto1)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto2)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Foto2)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto3)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Foto2)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto3)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Foto3)
+                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPlato }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dd>
+                    @Html.DisplayFor(model => model.Foto3)
+                </dd>
+
+            </dl>
+        </div>
+        </div>
+        <div>
+            <p>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.IdPlato }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+            </p>
+        </div>

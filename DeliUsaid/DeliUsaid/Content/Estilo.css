@@ -18,6 +18,11 @@ p {
     color: #fff;
 }
 
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
 a,
 a:hover,
 a:focus {

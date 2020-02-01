@@ -4,14 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<br />
 
 
 <form action="@Url.Action("Create","Locales")" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
 
-    <div class="jumbotron" style="background-color:#F8DDE2; color:#fff;">
-        <h4>Restaurantes</h4>
+    <div class="jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+        <center>
+            <h3> Agregas Nuevo Restaurantes</h3>
+        </center>
         <hr />
         <div class="form-row">
             <div class="form-group col-sm-4">
@@ -65,9 +67,10 @@
                 </div>
             </div>
         </div>
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-success" />
+                <input type="submit" value="Guardar" class="btn btn-success" style="width: 30%;" />
                 @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
             </div>
         </div>
