@@ -510,6 +510,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Principal.cshtml" />
     <Content Include="Views\Shared\_Platos.cshtml" />
+    <Content Include="Views\Locales\Local.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

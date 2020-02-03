@@ -11,7 +11,7 @@
         <div class="col-sm-5">
             <p style="color:black">@item.Nombre</p>
             <div class="row jumbotron">
-                @Html.Partial("_Platos", (List<DeliUsaid.Models.Platos>)ViewBag.platos, new ViewDataDictionary { { "id", item.IdLocal.ToString() } })
+                @Html.Partial("_Platos", (List<DeliUsaid.Models.Platos>)ViewBag.platos, new ViewDataDictionary { { "id", item.IdLocal.ToString()},{ "limit",2} })
             </div>
         </div>
             <div class="offset-sm-1"></div>

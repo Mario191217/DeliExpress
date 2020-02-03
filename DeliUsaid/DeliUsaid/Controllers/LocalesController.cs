@@ -124,6 +124,14 @@ namespace DeliUsaid.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Local(int id)
+        {
+            ViewBag.id = id;
+            ViewBag.limit = db.Platos.Count();
+            ViewBag.platos = db.Platos.ToList();
+            return View(db.Platos.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

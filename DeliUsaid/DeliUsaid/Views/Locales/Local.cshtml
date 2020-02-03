@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DeliUsaid.Models.Platos>
+
+@{
+    ViewBag.Title = "Local";
+}
+
+    <div class="container">
+        <center style="color:black" id="titulo"></center>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item.Locales.IdLocal == ViewBag.id)
+                {
+                    <input type="hidden" id="title" value="@item.Locales.Nombre"/>
+                    <div class="col-sm-3">
+                        <div class="jumbotron">
+                            <img src="@item.Foto1" style="width:100px; height:100px;" />
+                        </div>
+                    </div>
+                    <div class="offset-sm-1"></div>
+                }
+            }
+        </div>
+    </div>
+
+@section title{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var titulo = $("#title").val();
+            $("#titulo").html(titulo);
+        })
+    </script>
+}

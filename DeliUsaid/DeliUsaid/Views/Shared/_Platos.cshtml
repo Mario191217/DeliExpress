@@ -3,6 +3,7 @@
 @{
     int id = Convert.ToInt32(ViewData["id"]);
     int cont = 0;
+    int limit = Convert.ToInt32(ViewData["limit"]);
 }
 
 
@@ -15,7 +16,7 @@
         </div>
         <div class="offset-sm-2"></div>
         cont++;
-        if(cont == 2)
+        if(cont == limit)
         {
             break;
         }

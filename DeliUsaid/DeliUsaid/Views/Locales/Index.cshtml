@@ -71,7 +71,7 @@
                     <p style="font-size: 26px; color: #F62104;">@lista[i].Nombre <img src="@lista[i].Logo" style="width:100px; height:100px;" /></p>            
                 <br />             
                 @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdLocal }, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdLocal }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Detalles", "Local", new { id = lista[i].IdLocal }, new { @class = "btn btn-success" }) |
                 @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdLocal }, new { @class = "btn btn-danger" })
             </div>
         </div>
