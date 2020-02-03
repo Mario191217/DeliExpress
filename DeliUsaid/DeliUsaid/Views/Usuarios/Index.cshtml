@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="tabla">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Personas.Nombre)
@@ -49,3 +49,13 @@
 }
 
 </table>
+
+@section script{
+    
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#tabla').DataTable();
+            alert("sd");
+} );
+    </script>
+    }

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DeliUsaid.Models.Platos>
+
+@{
+    int id = Convert.ToInt32(ViewData["id"]);
+    int cont = 0;
+}
+
+
+@foreach (var item in Model)
+{
+    if (item.Locales.IdLocal == id)
+    {
+        <div class="col-sm-5 jumbotron alert-danger">
+            <img src="@item.Foto1" style="width:100px; height:100px;" />
+        </div>
+        <div class="offset-sm-2"></div>
+        cont++;
+        if(cont == 2)
+        {
+            break;
+        }
+    }
+}

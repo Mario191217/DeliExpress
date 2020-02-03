@@ -45,7 +45,8 @@ namespace DeliUsaid.Controllers
 
         public ActionResult Principal()
         {
-            return View();
+            ViewBag.platos = db.Platos.ToList();
+            return View(db.Locales.ToList());
         }
     }
 }

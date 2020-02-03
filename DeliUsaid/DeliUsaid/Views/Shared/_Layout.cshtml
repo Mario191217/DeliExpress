@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Estilo.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
     <!--Iconos-->
@@ -153,15 +154,16 @@
         <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
         <script src="~/Scripts/bootstrap.min.js"></script>
         <script src="~/Scripts/main.js"></script>
+        <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
 
-        @RenderSection("datepicker", false);
+        @RenderSection("datepicker", false)
+        @RenderSection("script", false)
         <script type="text/javascript">
 
             $(document).ready(function () {
                 $('#sidebarCollapse').on ('click', function () {
                     $('#sidebar').classList.toggle('active');
                 });
-
                 //$('.menu li:has(ul)').on('click', function () {
 
                 //    if ($(this).hasClass('activado')) {

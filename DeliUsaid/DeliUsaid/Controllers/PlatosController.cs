@@ -48,10 +48,14 @@ namespace DeliUsaid.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdPlato,NombrePlato,Precio,Descripcion,Foto1,Foto2,Foto3,IdLocal")] Platos platos)
+        public ActionResult Create(Platos platos, HttpPostedFileBase Foto1)
         {
             if (ModelState.IsValid)
             {
+                string archivo = platos.NombrePlato;
+                string url = "/Content/Img/" + archivo + DateTime.Now.ToString("dd-MM-yyyy") + (System.IO.Path.GetExtension(Foto1.FileName));
+                Foto1.SaveAs(Server.MapPath(url));
+                platos.Foto1 = url;
                 db.Platos.Add(platos);
                 db.SaveChanges();
                 return RedirectToAction("Index");

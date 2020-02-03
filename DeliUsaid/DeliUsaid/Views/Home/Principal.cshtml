@@ -1,7 +1,20 @@
-﻿
+﻿@model IEnumerable<DeliUsaid.Models.Locales>
+
 @{
     ViewBag.Title = "Principal";
 }
 
-<h2>Principal</h2>
-
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="col-sm-5">
+            <p style="color:black">@item.Nombre</p>
+            <div class="row jumbotron">
+                @Html.Partial("_Platos", (List<DeliUsaid.Models.Platos>)ViewBag.platos, new ViewDataDictionary { { "id", item.IdLocal.ToString() } })
+            </div>
+        </div>
+            <div class="offset-sm-1"></div>
+        }
+    </div>
+</div>
