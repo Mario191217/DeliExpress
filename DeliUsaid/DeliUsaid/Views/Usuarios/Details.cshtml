@@ -4,47 +4,52 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
+<br />
 <div>
-    <h4>Usuarios</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Personas.Nombre)
-        </dt>
+    <div class="row">
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background-color:#F8DDE2; color:#F62104;">
+                <h4>Detalles Usuarios</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.Personas.Nombre)
-        </dd>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Personas.Nombre)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Roles.Rol)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Personas.Nombre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Roles.Rol)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Roles.Rol)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Roles.Rol)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Usuario)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Usuario)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Clave)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Usuario)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Clave)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Clave)
+                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUsuario }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dd>
+                    @Html.DisplayFor(model => model.Clave)
+                </dd>
+
+            </dl>
+        </div>
+        </div>
+    </div>
+
+        <div>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.IdUsuario }, new {@class="btn btn-warning" }) |
+            @Html.ActionLink("Regresar", "Index", null, new {@class = "btn btn-info" })
+        </div>

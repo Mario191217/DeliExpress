@@ -23,13 +23,14 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
-a,
-a:hover,
-a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
+
+    a,
+    a:hover,
+    a:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
 
 .navbar {
     padding: 10px 10px;
@@ -43,14 +44,14 @@ a:focus {
     .navbar ul li a {
         background: #F62104;
         color: #ffffff;
-        padding: 7.5px;
+        padding: 5.0px;
         min-width: 125px;
     }
 
         .navbar ul li a:hover {
             background: #ffc107;
             color: #fff;
-            padding: 7.5px;
+            padding: 5.0px;
         }
 
 .navbar-btn {
@@ -112,8 +113,8 @@ img {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #F8DDE2;
-    color: #F62104;
+    background: #2C3E50;
+    color: #fff;
     transition: all 0.3s;
 }
 
@@ -125,9 +126,13 @@ img {
 
     #sidebar .sidebar-header {
         padding: 20px;
-        background: #F8DDE2;
+        background: #2C3E50;
     }
 
+    #sidebar ul li a {
+        color: #ffffff;
+        text-decoration: none;
+    }
 
     #sidebar ul p {
         color: #fff;
@@ -143,6 +148,7 @@ img {
         #sidebar ul li a:hover {
             background: #F62104;
             color: #ffffff;
+            text-decoration: none;
         }
 
     #sidebar ul li.active > a,
@@ -212,7 +218,8 @@ a[data-toggle="collapse"] {
     list-style: none;
     background-color: #F8DDE2;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 12px;
+
 }
 /* ---------------------------------------------------
     CONTENT STYLE

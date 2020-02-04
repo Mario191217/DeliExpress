@@ -1,16 +1,24 @@
-﻿@model IEnumerable<DeliUsaid.Models.Usuarios>
+﻿
+@model IEnumerable<DeliUsaid.Models.Usuarios>
+
 
 @{
+
+
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<center>
+    <h2 style="color:#F62104;">Usuarios DeliExpress</h2>
+</center>
+<br />
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table" id="tabla">
-    <tr>
+<table class="table table-hover" style="background-color:#F8DDE2; color: #F62104;">
+    <tr class="bg-danger" style="color: #fff;">
         <th>
             @Html.DisplayNameFor(model => model.Personas.Nombre)
         </th>
@@ -20,42 +28,41 @@
         <th>
             @Html.DisplayNameFor(model => model.Usuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clave)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Clave)
+            </th>*@
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Personas.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Roles.Rol)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clave)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuario })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personas.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles.Rol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Clave)
+                </td>*@
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 </table>
 
 @section script{
-    
+
     <script type="text/javascript">
-        $(document).ready( function () {
+        $(document).ready(function () {
             $('#tabla').DataTable();
             alert("sd");
-} );
+        });
     </script>
-    }
+}
