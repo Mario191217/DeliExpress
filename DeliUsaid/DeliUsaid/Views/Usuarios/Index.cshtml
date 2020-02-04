@@ -17,51 +17,55 @@
 <p>
     @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table table-hover" style="background-color:#F8DDE2; color: #F62104;">
-    <tr class="bg-danger" style="color: #fff;">
-        <th>
-            @Html.DisplayNameFor(model => model.Personas.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Roles.Rol)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </th>
-        @*<th>
+<table class="table display" style="background-color:#F8DDE2; color: #F62104; width:100%;" id="table">
+    <thead>
+        <tr class="bg-danger" style="color: #fff;">
+            <th>
+                @Html.DisplayNameFor(model => model.Personas.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles.Rol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Clave)
             </th>*@
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Personas.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Roles.Rol)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario)
-            </td>
-            @*<td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Personas.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roles.Rol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario)
+                </td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Clave)
                 </td>*@
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Detalle", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-    }
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
-@section script{
+@section table{
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#tabla').DataTable();
+            $('#table').DataTable();
             alert("sd");
         });
     </script>
